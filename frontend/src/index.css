@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+html, body, #root, #defaultLayout, #guestLayout {
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #212121;
+    background-color: #f6f6f6;
+}
+
+input {
+    outline: 0;
+    background: #ffffff;
+    width: 100%;
+    border: 2px solid #e6e6e6;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    border-color: #773f3f ;
+}
+
+.btn,
+.btn-add,
+.btn-edit,
+.btn-delete {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #a76f08;
+    border: 0;
+    text-decoration: none;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 16px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-add,
+.btn-edit,
+.btn-delete{
+    padding: 0.5rem 0.75rem;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.btn-add {
+    background-color: #00a762;
+}
+.btn-delete {
+    background-color: #b72424;
+}
+
+.btn-logout {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    color: #212121;
+    margin-left: 1.5rem;
+    transition: all 0.3s;
+    border-radius: 6px;
+}
+.btn-logout:hover {
+    background-color: rgba(206, 120, 22, 0.626);
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background: #773f3f;
+}
+
+.text-center {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table > thead > tr > th {
+    text-align: left;
+    padding: 0.5rem 0.5rem;
+    background-color: #efefef;
+}
+
+table > tbody > tr > td {
+    padding: 0.5rem 0.5rem;
+    border-bottom: 1px solid #efefef;
+    white-space: nowrap;
+}
+
+.card {
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.alert {
+    padding: 1rem;
+    background-color: #ff4040;
+    color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.notification {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 100;
+    padding: 1rem 1.5rem;
+    background-color: #00a762;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+/* Login/Signup forms*/
+
+.login-signup-form {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-signup-form .form {
+    width: 360px;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    padding: 34px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-signup-form .title {
+    font-size: 20px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.login-signup-form .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 16px;
+    text-align: center;
+}
+
+.login-signup-form .form .message a {
+    color: #773f3f ;
+    text-decoration: none;
+}
+
+/* Login/Signup form */
+
+
+#defaultLayout {
+    display: flex;
+}
+
+#defaultLayout aside {
+    width: 240px;
+    background-color: #773f3f;
+    padding: 1rem
+}
+
+#defaultLayout aside > a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+#defaultLayout aside > a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#defaultLayout .content {
+    flex: 1;
+}
+
+#defaultLayout header {
+    height: 80px;
+    padding: 2rem 3rem;
+    background-color: white;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#defaultLayout main {
+    padding: 2rem;
+}
+
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.s-card{
+    flex: 0 0 calc(33.33% - 20px);
+    text-align: center;
+    width: 100%;
+    background:#eadffc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid transparent;
+
+
+    transition: 0.3s;
+
+
+}
+
+.s-card:hover{
+    border-color: #773f3f ;
+
+}
+
+.s-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.s-card h3{
+    font-size: 1.7rem;
+    color: #773f3f ;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.s-card span{
+    font-size: 1.1rem;
+    line-height: 2rem;
+    
+}
+
+.s-card button{
+    font-size: large;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    display: flex;
+    border-radius: 0.5rem;
+    background-color: #E5D9F2;
+    border: 1px solid rgb(26, 0, 255);
+    transition: 0.3s;
+
+    
+
+    margin: auto;
+}
+
+.s-card button:hover{
+    transform: scale(1.1);
+    background-color: #CDC1FF;
+}
+
+.loading-spin{
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    z-index: 2;
+
+    margin-left: 45vw;
+}
+
+.s-logo{
+    font-size: 2rem;
+    color: rgb(63, 51, 51);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.s-logo:hover{
+    transform: scale(1.5);
+}
+/* CSS File: App.css */
+
+/* Reset and Global Styles */
+
+  
+  .HomePage {
+    text-align: center;
+  }
+  
+ 
+  .header {
+    background: linear-gradient(to right, #773f3f, #fdba01);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-button {
+    background: rgb(255, 255, 255);
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+  }
+  
+  .nav-button:hover {
+    transform: scale(1.1);
+    background: rgb(128, 70, 70);
+    color: white;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    height: 70vh;
+    background: #ce2626;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 48px;
+  }
+  
+  .hero-section p {
+    font-size: 20px;
+    max-width: 800px;
+  }
+  
+  /* Info Section */
+  .info-section {
+    background: #9694FF;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .info-card {
+    background: white;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer */
+  .footer {
+    background: #252525;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+
+
+  /*..................................................................*/
+  
+  /*..................................................................*/
+  
+  /*..................................................................*/
+  
+  /*..................................................................*/
+
+  .hero-image {
+    max-width: 600px;
+    height: auto;
+    padding-top: 50px;
+  }
+
+
+  /* App.css */
+
+  
+  
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .box1{
+    width: 100%;
+    height:550px ;
+    background-color: #ffffff;
+    margin: 0;
+    text-align: left;
+    padding-left: 100px;
+    align-items: center;
+    padding-top: 100px;
+  }
+
+  .box{
+    width: 100%;
+    height:550px ;
+    background-color: #ffffff;
+    margin: 0;
+  }
+  
+  .box12{
+    width: 100%;
+    height:550px ;
+    background-color: #ffffff;
+    margin: 0;
+    text-align: left;
+    padding-right: 100px;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .box2{
+    width: 100%;
+    height:550px ;
+    background-color: #ffffff;
+    margin: 0;
+  }
+  .heding_text1{
+    font-size: 60px;
+    color: #fdba01;
+    font-weight: bold;
+    padding-top: 20px;
+    font-family: poppins;
+  }
+
+  .heding_text2{
+    font-size: 30px;
+    color: #262626;
+    font-weight: think;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    align-items: center;
+  }
+
+  .para1{
+    padding-top: 20px;
+    font-weight: bold;
+  }
+
+  .container{
+    background-image: "src/assets/images/background.jpg";
+    width: 100%;
+    height:550px;
+    background-color: rgb(41, 41, 41);
+  }
+  
+
+  .container_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .container_2{
+    width: 400px;
+    height:300px ;
+    background-color: #ffffff;
+    margin: 20px;
+    text-align: left;
+    align-items: center;
+    padding-top: 20px;;
+    padding-left: 80px;
+    /* display: flex;
+    justify-content: center; Center horizontally */
+  }
+
+  .cart-image {
+    max-width: 200px;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+  }
+
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #773f3f ;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
